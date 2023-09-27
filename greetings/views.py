@@ -7,4 +7,4 @@ def greeting(request):
    return HttpResponse("Hello World!")
 
 def greeting_name(request, name):
-   return HttpResponse("Hello " + name.capitalize() +"!")
+   return HttpResponse(f"Hello {name.capitalize()} !")
