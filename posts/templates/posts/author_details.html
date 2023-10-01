@@ -1,0 +1,18 @@
+{% extends "posts/main.html" %}
+
+{% block title %}Post details{% endblock %}
+
+{% block content %}
+<table>
+    <tr>
+        <th>Nick</th>
+        <td>{{ author.nick }}</td>
+    </tr>
+    <tr>
+        <th>E-mail</th>
+        <td>{{ author.email}}</td>
+    </tr>
+
+</table>
+
+{% endblock %}

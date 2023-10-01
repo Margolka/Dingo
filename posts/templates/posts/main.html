@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+
+<body>
+    <div id="content">
+        <div id="header">
+            <h2>Posts</h2>
+        </div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        <div id="inner-content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div id="bar">
+            {% block bar %}
+            <a href="{% url 'posts:authors_list' %}">Authors List</a>
+            <a href="{% url 'posts:posts_list' %}">Posts List</a>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>
